@@ -1,6 +1,6 @@
 {
   "name": "mt6",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Machine Translation (Generate, Learning, Translate)",
   "main": "lib/grammar.js",
   "dependencies": {},
