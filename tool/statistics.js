@@ -23,9 +23,19 @@ S.doLine = function (line) {
   }
 }
 
+S.pcond = function (b, a) {
+  return S.map2[a + b] / S.map1[a]
+}
+
 S.print = function () {
   console.log(JSON.stringify(S.map1, null, 1))
   console.log(JSON.stringify(S.map2, null, 1))
+  S.P = {}
+  for (let ab in S.map2) {
+    let a = ab[0]
+    let b = ab[1]
+    console.log('P(%s|%s)=%d', b, a, S.map2[ab] / S.map1[a])
+  }
 }
 
 S.statistics(process.argv[2])
