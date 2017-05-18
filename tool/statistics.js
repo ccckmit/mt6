@@ -8,15 +8,17 @@ S.statistics = function (file) {
   let text = fs.readFileSync(file, 'utf-8')
   let lines = text.split(/\r?\n/)
   for (var line of lines) {
-    S.doLine(line)
+    if (line.trim() !== '') S.doLine(line)
   }
 }
 
 S.doLine = function (line) {
   let c0 = '.'
+  let c0count = S.map1[c0]
+  S.map1[c0] = (c0count != null) ? c0count + 1 : 1
   for (let c1 of line) {
-    var c1count = S.map1[c1]
-    var c2count = S.map2[c0 + c1]
+    let c1count = S.map1[c1]
+    let c2count = S.map2[c0 + c1]
     S.map1[c1] = (c1count != null) ? c1count + 1 : 1
     S.map2[c0 + c1] = (c2count != null) ? c2count + 1 : 1
     c0 = c1
