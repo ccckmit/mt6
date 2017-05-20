@@ -3,7 +3,9 @@
   "version": "0.3.0",
   "description": "Machine Translation (Generate, Learning, Translate)",
   "main": "lib/grammar.js",
-  "dependencies": {},
+  "dependencies": {
+    "rlab": "^1.0.0"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "browserify web/_mt6.js -o web/mt6.js && node server/staticServer",
